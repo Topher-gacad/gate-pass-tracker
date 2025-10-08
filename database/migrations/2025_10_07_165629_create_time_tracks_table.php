@@ -1,35 +1,28 @@
-<x-layout>
-    <div class="max-w-2xl mx-auto mt-10">
-        <h1 class="text-2xl font-bold mb-6 text-center">Create Time Track</h1>
+<?php
 
-        <form action="{{ route('time_tracks.store') }}" method="POST" class="space-y-4">
-            @csrf
-            <div>
-                <label class="block font-medium">User ID</label>
-                <input type="text" name="User_id" class="w-full border rounded p-2" required>
-            </div>
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-            <div>
-                <label class="block font-medium">Reason</label>
-                <textarea name="Reason" class="w-full border rounded p-2" required></textarea>
-            </div>
+return new class extends Migration
+{
+  
+    public function up(): void
+    {
+        Schema::create('time_tracks', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('User_id'); 
+            $table->string('Reason', 255);
+            $table->string('Location', 255);
+            $table->enum('Type', ['IN', 'OUT']); 
+            $table->timestamps();
+            $table->softDeletes(); 
+        });
+    }
 
-            <div>
-                <label class="block font-medium">Location</label>
-                <input type="text" name="Location" class="w-full border rounded p-2" required>
-            </div>
-
-            <div>
-                <label class="block font-medium">Type</label>
-                <select name="Type" class="w-full border rounded p-2" required>
-                    <option value="IN">IN</option>
-                    <option value="OUT">OUT</option>
-                </select>
-            </div>
-
-            <div class="text-center">
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save</button>
-            </div>
-        </form>
-    </div>
-</x-layout>
+   
+    public function down(): void
+    {
+        Schema::dropIfExists('time_tracks');
+    }
+};
