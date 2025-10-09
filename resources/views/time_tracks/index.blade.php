@@ -19,13 +19,13 @@
       </thead>
 
       <tbody>
-        @forelse ($time_tracks as $index => $track)
+        @forelse ($timeTracks as $index => $track)
         <tr class="hover:bg-gray-50 border-b">
           <td class="px-4 py-3 border">{{ $index + 1 }}</td>
-          <td class="px-4 py-3 border">{{ $track->User_id }}</td>
-          <td class="px-4 py-3 border break-words">{{ $track->Reason }}</td>
-          <td class="px-4 py-3 border">{{ $track->Location }}</td>
-          <td class="px-4 py-3 border">{{ $track->Type }}</td>
+          <td class="px-4 py-3 border">{{ $track->user_id }}</td>
+          <td class="px-4 py-3 border break-words">{{ $track->reason }}</td>
+          <td class="px-4 py-3 border">{{ $track->location }}</td>
+          <td class="px-4 py-3 border">{{ $track->type }}</td>
           <td class="px-4 py-3 border text-center">
             <a href="{{ route('time-tracks.edit', $track->id) }}"
               class="bg-yellow-500 text-black px-3 py-1 rounded hover:bg-yellow-600">
