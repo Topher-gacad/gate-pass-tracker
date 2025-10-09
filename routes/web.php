@@ -1,6 +1,7 @@
 
 <?php
 
+use App\Http\Controllers\TimeTrackController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -20,3 +21,6 @@ Route::get('dashboard', function () {
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::resource('time-tracks', TimeTrackController::class);
+ 
