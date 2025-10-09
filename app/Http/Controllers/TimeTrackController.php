@@ -9,9 +9,9 @@ class TimeTrackController extends Controller
 {
     public function index()
     {
-        $timeTracks = TimeTrack::latest()->get(); 
-        
-        return view('time_tracks.index',compact('time_tracks'));
+        $timeTracks = TimeTrack::latest()->get();
+
+        return view('time_tracks.index', compact('timeTracks'));
     }
 
     public function create()
@@ -22,7 +22,7 @@ class TimeTrackController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'user_id' => 'required|string',
+            'user_id' => 'required|integer',
             'reason' => 'required|string|max:255',
             'location' => 'required|string|max:255',
             'type' => 'required|string|in:in,out',
@@ -30,8 +30,7 @@ class TimeTrackController extends Controller
 
         TimeTrack::create($validated);
 
-        return redirect()
-            ->route('time_tracks.index')
+        return redirect()->route('time_tracks.index')
             ->with('success', 'Time track added successfully!');
     }
 
@@ -56,13 +55,15 @@ class TimeTrackController extends Controller
 
         $timeTrack->update($validated);
 
-        return redirect()->route('time_tracks.index')->with('success', 'Time track updated successfully!');
+        return redirect()->route('time_tracks.index')
+            ->with('success', 'Time track updated successfully!');
     }
 
     public function destroy(TimeTrack $timeTrack)
     {
         $timeTrack->delete();
 
-        return redirect()->route('time_tracks.index')->with('success', 'Time track deleted successfully!');
+        return redirect()->route('time_tracks.index')
+            ->with('success', 'Time track deleted successfully!');
     }
 }
