@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function showLoginForm()
+    public function show()
     {
         return view('login');
     }
-
+         
     public function login(Request $request)
     {
         $credentials = $request->validate([
