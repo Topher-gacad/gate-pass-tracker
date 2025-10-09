@@ -33,8 +33,8 @@
                 <label class="block font-medium mb-1">Type</label>
                 <select name="Type" class="w-full border rounded p-2" required>
                     <option value="">-- Select Type --</option>
-                    <option value="IN">IN</option>
-                    <option value="OUT">OUT</option>
+                    <option value="in">in</option>
+                    <option value="out">out</option>
                 </select>
             </div>
 

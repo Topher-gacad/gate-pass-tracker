@@ -21,7 +21,7 @@ class TimeTrackFactory extends Factory
             'user_id' => $this->faker->numberBetween(1, 100),
             'reason' => $this->faker->sentence(),
             'location' => $this->faker->city(),
-            'type' => $this->faker->randomElement(['IN', 'OUT']),
+            'type' => $this->faker->randomElement(['in', 'out']),
         ];
     }
 }

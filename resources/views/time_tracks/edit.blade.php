@@ -24,8 +24,8 @@
       <div>
         <label class="block font-medium mb-1">Type</label>
         <select name="Type" class="w-full border rounded p-2" required>
-          <option value="IN" {{ $timeTrack->Type == 'IN' ? 'selected' : '' }}>IN</option>
-          <option value="OUT" {{ $timeTrack->Type == 'OUT' ? 'selected' : '' }}>OUT</option>
+          <option value="in" {{ $timeTrack->Type == 'in' ? 'selected' : '' }}>in</option>
+          <option value="out" {{ $timeTrack->Type == 'out' ? 'selected' : '' }}>out</option>
         </select>
       </div>
 
