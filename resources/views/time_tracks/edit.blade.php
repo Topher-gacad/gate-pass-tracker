@@ -2,7 +2,7 @@
   <div class="max-w-2xl mx-auto mt-5">
     <h1 class=" mt-4 flex justify-center text-2xl font-bold mb-6  ">Edit Time Track</h1>
 
-    <form action="{{ route('time_tracks.update', $timeTrack->id) }}" method="POST" class="space-y-4 bg-white p-6 rounded shadow">
+    <form action="{{ route('time-tracks.update', $timeTrack->id) }}" method="POST" class="space-y-4 bg-white p-6 rounded shadow">
       @csrf
       @method('PUT')
 
@@ -35,7 +35,7 @@
     </form>
 
     <div class="mt-4 flex justify-center ">
-      <a href="{{ route('time_tracks.index') }}" class="text-red-900 hover:underline">Back to List</a>
+      <a href="{{ route('time-tracks.index') }}" class="text-red-900 hover:underline">Back to List</a>
     </div>
   </div>
 </x-layout>

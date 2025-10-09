@@ -27,12 +27,12 @@
           <td class="px-4 py-3 border">{{ $track->Location }}</td>
           <td class="px-4 py-3 border">{{ $track->Type }}</td>
           <td class="px-4 py-3 border text-center">
-            <a href="{{ route('time_tracks.edit', $track->id) }}"
+            <a href="{{ route('time-tracks.edit', $track->id) }}"
               class="bg-yellow-500 text-black px-3 py-1 rounded hover:bg-yellow-600">
               Edit
             </a>
 
-            <form action="{{ route('time_tracks.destroy', $track->id) }}"
+            <form action="{{ route('time-tracks.destroy', $track->id) }}"
               method="POST" class="inline">
               @csrf
               @method('DELETE')
@@ -58,7 +58,7 @@
 
   <div class="mt-6 text-center">
     <a
-      href="{{ route('time_tracks.create') }}"
+      href="{{ route('time-tracks.create') }}"
       class="flex justify-center px-10 py-10">
       Add Time Track
     </a>

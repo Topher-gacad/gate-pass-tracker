@@ -10,11 +10,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('time_tracks', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('User_id'); 
-            $table->string('Reason', 255);
-            $table->string('Location', 255);
-            $table->enum('Type', ['IN', 'OUT']); 
+            $table->uuid('id')->primary()->unique;
+            $table->unsignedBigInteger('user_id'); 
+            $table->string('reason', 255);
+            $table->string('location', 255);
+            $table->enum('type', ['in', 'out']); 
             $table->timestamps();
             $table->softDeletes(); 
         });

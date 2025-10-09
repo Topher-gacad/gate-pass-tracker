@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TimeTrack;
+use App\Models\timeTrack;
 use Illuminate\Http\Request;
 
 class TimeTrackController extends Controller
 {
     public function index()
     {
-        $time_tracks = TimeTrack::latest()->get();
-        return view('time_tracks.index', compact('time_tracks'));
+        $time_tracks = timeTrack::latest()->get(); return view('time_tracks.index', compact('time_tracks'));
     }
 
     public function create()
@@ -21,48 +20,45 @@ class TimeTrackController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'User_id' => 'required|integer',
-            'Reason' => 'required|string|max:255',
-            'Location' => 'required|string|max:255',
-            'Type' => 'required|string|in:IN,OUT',
+            'user_id' => 'required|integer',
+            'reason' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
+            'type' => 'required|string|in:IN,OUT',
         ]);
 
-        TimeTrack::create($validated);
+        timeTrack::create($validated);
 
-        return redirect()->route('time_tracks.index')
-            ->with('success', 'Time track added successfully!');
+        return redirect()->route('time_tracks.index') ->with('success', 'Time track added successfully!');
     }
 
-    public function show(TimeTrack $timeTrack)
+    public function show(timeTrack $timeTrack)
     {
         return view('time_tracks.show', compact('timeTrack'));
     }
 
-    public function edit(TimeTrack $timeTrack)
+    public function edit(timeTrack $timeTrack)
     {
         return view('time_tracks.edit', compact('timeTrack'));
     }
 
-    public function update(Request $request, TimeTrack $timeTrack)
+    public function update(Request $request, timeTrack $timeTrack)
     {
         $validated = $request->validate([
-            'User_id' => 'required|integer',
-            'Reason' => 'required|string|max:255',
-            'Location' => 'required|string|max:255',
-            'Type' => 'required|string|in:IN,OUT',
+            'user_id' => 'required|integer',
+            'reason' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
+            'type' => 'required|string|in:IN,OUT',
         ]);
 
         $timeTrack->update($validated);
 
-        return redirect()->route('time_tracks.index')
-            ->with('success', 'Time track updated successfully!');
+        return redirect()->route('time_tracks.index')->with('success', 'Time track updated successfully!');
     }
 
-    public function destroy(TimeTrack $timeTrack)
+    public function destroy(timeTrack $timeTrack)
     {
         $timeTrack->delete();
 
-        return redirect()->route('time_tracks.index')
-            ->with('success', 'Time track deleted successfully!');
+        return redirect()->route('time_tracks.index')->with('success', 'Time track deleted successfully!');
     }
 }

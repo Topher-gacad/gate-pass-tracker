@@ -11,9 +11,9 @@ class TimeTrack extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'User_id',
-        'Reason',
-        'Location',
-        'Type',
+        'user_id',
+        'reason',
+        'location',
+        'type',
     ];
 }

@@ -12,7 +12,7 @@
     <div class="max-w-2xl mx-auto mt-10">
         <h1 class="text-2xl font-bold mb-6 text-center">Create Time Track</h1>
 
-        <form action="{{ route('time_tracks.store') }}" method="POST" class="space-y-4 bg-white p-6 rounded shadow">
+        <form action="{{ route('time-tracks.store') }}" method="POST" class="space-y-4 bg-white p-6 rounded shadow">
             @csrf
             <div>
                 <label class="block font-medium mb-1">User ID</label>
@@ -43,7 +43,7 @@
                     Save
                 </button>
 
-                <a href="{{ route('time_tracks.index') }}"
+                <a href="{{ route('time-tracks.index') }}"
                     class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">
                     Back
                 </a>

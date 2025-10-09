@@ -11,11 +11,11 @@
         </div>
 
         <div class="mt-6 flex justify-between">
-            <a href="{{ route('time_tracks.index') }}" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
+            <a href="{{ route('time-tracks.index') }}" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
                 Back
             </a>                                                                           
 
-            <a href="{{ route('time_tracks.edit', $timeTrack->id) }}" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+            <a href="{{ route('time-tracks.edit', $timeTrack->id) }}" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
                 Edit
             </a>
         </div>

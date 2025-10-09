@@ -7,4 +7,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('time_tracks', TimeTrackController::class);
+Route::resource('time-tracks', TimeTrackController::class);
+ 

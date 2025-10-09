@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\TimeTrack;
+use App\Models\timeTrack;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +13,6 @@ class TimeTrackSeeder extends Seeder
      */
     public function run(): void
     {
-        TimeTrack::factory()->count(10)->create();
+        timeTrack::factory()->count(10)->create();
     }
 }
