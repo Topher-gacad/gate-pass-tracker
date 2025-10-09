@@ -72,11 +72,9 @@ class UserController extends Controller
 
         $user->update($validated);
 
-            // if (!empty($validated['password'])) {
-            //     $user->password = Hash::make($validated['password']);
-            // }
-
-        $user->save();
+        // if (!empty($validated['password'])) {
+        //     $user->password = Hash::make($validated['password']);
+        // }
 
         return redirect()->route('users.index', $user->id)->with('success', 'User updated successfully.');
     }
