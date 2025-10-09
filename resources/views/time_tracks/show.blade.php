@@ -1,17 +1,23 @@
 <!-- "TODO: Update UI elements below" -->
 <x-layout>
-    <div class="max-w-3xl mx-auto mt-10">
+    <div class="max-w-2xl mx-auto mt-10 bg-white shadow-md rounded-lg p-6">
         <h1 class="text-2xl font-bold mb-4 text-center">Time Track Details</h1>
 
-        <div class="bg-gray-100 p-6 rounded shadow space-y-2">
-            <p><strong>User ID:</strong> {{ $time_track->User_id }}</p>
-            <p><strong>Reason:</strong> {{ $time_track->Reason }}</p>
-            <p><strong>Location:</strong> {{ $time_track->Location }}</p>
-            <p><strong>Type:</strong> {{ $time_track->Type }}</p>
+        <div class="space-y-3">
+            <p><strong>User ID:</strong> {{ $timeTrack->User_id }}</p>
+            <p><strong>Reason:</strong> {{ $timeTrack->Reason }}</p>
+            <p><strong>Location:</strong> {{ $timeTrack->Location }}</p>
+            <p><strong>Type:</strong> {{ $timeTrack->Type }}</p>
         </div>
 
-        <div class="mt-6 text-center">
-            <a href="{{ route('time_tracks.index') }}" class="text-blue-500 hover:underline">← Back to list</a>
+        <div class="mt-6 flex justify-between">
+            <a href="{{ route('time_tracks.index') }}" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
+                Back
+            </a>                                                                           
+
+            <a href="{{ route('time_tracks.edit', $timeTrack->id) }}" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
+                Edit
+            </a>
         </div>
     </div>
 </x-layout>
