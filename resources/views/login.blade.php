@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<x-layout>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -22,7 +22,6 @@
     class="flex flex-col justify-center items-center min-h-screen"
     style="background-color: #003366;"
   >
-    <!-- Header Section -->
     <div class="flex flex-col items-center text-white mb-8">
       <img
         src="https://comfacgroup.com/wp-content/themes/scaffolding/images/about/selling-point-1.jpg"
@@ -74,4 +73,4 @@
       </div>
     </div>
   </body>
-</html>
+</x-layout>
