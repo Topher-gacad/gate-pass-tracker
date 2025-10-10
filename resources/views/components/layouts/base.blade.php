@@ -20,6 +20,6 @@
         @endif
     </head>
     <body>
-        {{ $slot }}
+      {{ $slot }}
     </body>
 </html>
