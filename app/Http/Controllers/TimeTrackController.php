@@ -22,7 +22,7 @@ class TimeTrackController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'user_id' => 'required|integer',
+            'user_id' => 'required|uuid|exists:users,id',
             'reason' => 'required|string|max:255',
             'location' => 'required|string|max:255',
             'type' => 'required|string|in:in,out',
@@ -47,10 +47,10 @@ class TimeTrackController extends Controller
     public function update(Request $request, TimeTrack $timeTrack)
     {
         $validated = $request->validate([
-            'user_id' => 'required|integer',
-            'reason' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
-            'type' => 'required|string|in:in,out',
+            'user_id' => 'uuid|exists:users,id',
+            'reason' => 'string|max:255',
+            'location' => 'string|max:255',
+            'type' => 'string|in:in,out',
         ]);
 
         $timeTrack->update($validated);

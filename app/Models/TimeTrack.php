@@ -17,4 +17,9 @@ class TimeTrack extends Model
         'location',
         'type',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

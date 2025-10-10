@@ -6,12 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-  
     public function up(): void
     {
         Schema::create('time_tracks', function (Blueprint $table) {
             $table->uuid('id')->primary()->unique;
-            $table->unsignedBigInteger('user_id'); 
+            $table->foreignUuid('user_id')->constrained('users', 'id')->cascadeOnDelete(); 
             $table->string('reason', 255);
             $table->string('location', 255);
             $table->enum('type', ['in', 'out']); 
@@ -19,7 +18,6 @@ return new class extends Migration
             $table->softDeletes(); 
         });
     }
-
    
     public function down(): void
     {

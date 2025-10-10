@@ -30,5 +30,3 @@ Route::get('/', function () {
 Route::resource('time-tracks', TimeTrackController::class);
 Route::resource('users', UserController::class);
 
-
- 
