@@ -1,4 +1,4 @@
-<x-layout>
+<x-layouts.auth>
   <div class="max-w-2xl mx-auto mt-5">
     <h1 class=" mt-4 flex justify-center text-2xl font-bold mb-6  ">Edit Time Track</h1>
 
@@ -38,4 +38,4 @@
       <a href="{{ route('time-tracks.index') }}" class="text-red-900 hover:underline">Back to List</a>
     </div>
   </div>
-</x-layout>
+</x-layouts.auth>
