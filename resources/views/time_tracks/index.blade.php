@@ -1,68 +1,52 @@
 <x-layouts.auth>
-  <div class="w-full mx-auto max-w-xl mt-5">
-    <div class="flex justify-center text-3xl font-bold border-b-2 border-gray-300 mb-4 pb-2">
-      <h1>All Time Tracks</h1>
-    </div>
-  </div>
-
-  <div class="overflow-x-auto shadow-md rounded-lg border border-gray-200">
-    <table class="w-full border-collapse text-sm table-fixed text-center">
-      <thead class="bg-gray-100 text-gray-700 uppercase">
+  <p class="text-2xl text-blue-600 text-center">Employee Time Management</p>
+    <label class="input">
+      <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <g
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          stroke-width="2.5"
+          fill="none"
+          stroke="currentColor"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </g>
+      </svg>
+    <input type="search" required placeholder="Search" />
+  </label> <br> <br>
+  <div class="h-50 overflow-x-auto rounded-box border border-blue-950">
+    <table class="table table-pin-rows bg-base-200">
+      <thead>
         <tr>
-          <th class="px-4 py-3 border w-[5%]">#</th>
-          <th class="px-4 py-3 border w-[10%]">User ID</th>
-          <th class="px-4 py-3 border w-[30%]">Reason</th>
-          <th class="px-4 py-3 border w-[20%]">Location</th>
-          <th class="px-4 py-3 border w-[10%]">Type</th>
-          <th class="px-4 py-3 border">Actions</th>
+          <th>Name</th>
+          <th>Company</th>
+          <th>Department</th>
+          <th>Role</th>
+          <th>Action</th>
         </tr>
       </thead>
-
       <tbody>
-        @forelse ($timeTracks as $index => $track)
-        <tr class="hover:bg-gray-50 border-b">
-          <td class="px-4 py-3 border">{{ $index + 1 }}</td>
-          <td class="px-4 py-3 border">{{ $track->user_id }}</td>
-          <td class="px-4 py-3 border break-words">{{ $track->reason }}</td>
-          <td class="px-4 py-3 border">{{ $track->location }}</td>
-          <td class="px-4 py-3 border">{{ $track->type }}</td>
-          <td class="px-4 py-3 border text-center">
-            <a href="{{ route('time-tracks.edit', $track->id) }}"
-              class="bg-yellow-500 text-black px-3 py-1 rounded hover:bg-yellow-600">
-              Edit
-            </a>
-
-            <form action="{{ route('time-tracks.destroy', $track->id) }}"
-              method="POST" class="inline">
-              @csrf
-              @method('DELETE')
-              <button type="submit"
-                class="bg-red-600 text-black px-3 py-1 rounded hover:bg-red-700"
-                onclick="return confirm('Are you sure you want to delete this record?')">
-                Delete
-              </button>
-            </form>
-          </td>
-        </tr>
-        @empty
         <tr>
-          <td colspan="6" class="text-center py-3 text-gray-500">
-            No time tracks found.
-          </td>
+          <td>Cy Ganderton</td>
+          <td>Comfac</td>
+          <td>Department</td>
+          <td>Supervisor</td>
+          <td>
+            <div class="flex gap-2">
+              <input type="text" class="input" placeholder="Reason" list="Reason" />
+                  <datalist id="Reason">
+                  <option value="Sick"></option>
+                  <option value="Meeting"></option>
+                  <option value="Emergency"></option>
+              </datalist>
+              <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">IN</button>
+              <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-2 border border-yellow-500 hover:border-transparent rounded">OUT</button>
+            </div>
+          </td>  
         </tr>
-        @endforelse
       </tbody>
-
     </table>
-  </div>
-
-  <div class="mt-6 text-center">
-    <a
-      href="{{ route('time-tracks.create') }}"
-      class="flex justify-center px-10 py-10">
-      Add Time Track
-    </a>
-    </div>
   </div>
 </x-layouts.auth>
 

@@ -95,7 +95,10 @@
         </header>
         
         <main>
-            {{$slot}}
+            <br>
+            <div class="w-11/12 max-w-screen-lg mx-auto">
+                {{$slot}}
+            </div>
         </main>
     </div>
 </x-layouts.base>
