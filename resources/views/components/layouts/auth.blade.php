@@ -47,10 +47,9 @@
     </div>
 </div>
 
-
     <header class="relative bg-blue-950 shadow-sm">
         <div class="mx-auto max-w-7xl px-4 py-1.5 sm:px-6 lg:px-8">
-            <div class="text-xl font-bold tracking-tight text-white">Dashboard</div>
+            <div class="text-xl font-bold tracking-tight text-white px-8">Dashboard</div>
         </div>
     </header>
 
