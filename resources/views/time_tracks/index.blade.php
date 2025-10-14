@@ -76,6 +76,9 @@
                 class="label-text">Manager</span></label></li>
         </ul>
       </details>
+  <div class="w-full mx-auto max-w-xl mt-5">
+    <div class="flex justify-center text-3xl font-bold border-b-2 border-gray-300 mb-4 pb-2">
+      <h1>All Time Tracks</h1>
     </div>
 
     <div class="h-50 overflow-x-auto rounded-box border border-blue-950">
