@@ -14,7 +14,7 @@ class TimeTrack extends Model
     protected $fillable = [
         'user_id',
         'reason',
-        'location',
+        
         'type',
     ];
 }

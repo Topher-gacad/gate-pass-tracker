@@ -24,7 +24,7 @@ class TimeTrackController extends Controller
         $validated = $request->validate([
             'user_id' => 'required|integer',
             'reason' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
+            
             'type' => 'required|string|in:in,out',
         ]);
 
@@ -49,7 +49,7 @@ class TimeTrackController extends Controller
         $validated = $request->validate([
             'user_id' => 'required|integer',
             'reason' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
+            
             'type' => 'required|string|in:in,out',
         ]);
 
@@ -67,6 +67,4 @@ class TimeTrackController extends Controller
             ->with('success', 'Time track deleted successfully!');
     }
 
-
-    
 }
