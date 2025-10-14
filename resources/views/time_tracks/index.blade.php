@@ -13,7 +13,7 @@
         </label>
         <details class="dropdown-bottom max-w-xs">
           <summary class="btn input w-full justify-start normal-case">Companies</summary>
-          <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <ul class="p-2 shadow menu dropdown-content z-[50] rounded-box w-52 absolute bg-white">
             <li>
               <label class="label cursor-pointer justify-start gap-2">
                 <input type="checkbox" checked="checked" class="checkbox checkbox-sm" />
@@ -34,9 +34,9 @@
             </li>
           </ul>
         </details>
-        <details class="dropdown max-w-xs">
+        <details class="dropdown-bottom max-w-xs">
           <summary class="btn input w-full justify-start normal-case">Department</summary>
-          <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <ul class="p-2 shadow menu dropdown-content z-[50] rounded-box w-52 absolute bg-white">
             <li>
               <label class="label cursor-pointer justify-start gap-2">
                 <input type="checkbox" checked="checked" class="checkbox checkbox-sm" />
@@ -57,9 +57,9 @@
             </li>
           </ul>
         </details>
-        <details class="dropdown max-w-xs">
+        <details class="dropdown-bottom max-w-xs">
           <summary class="btn input w-full justify-start normal-case">Role</summary>
-          <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <ul class="p-2 shadow menu dropdown-content z-[50] rounded-box w-52 absolute bg-white">
             <li>
               <label class="label cursor-pointer justify-start gap-2">
                 <input type="checkbox" checked="checked" class="checkbox checkbox-sm" />
