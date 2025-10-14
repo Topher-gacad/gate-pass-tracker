@@ -27,8 +27,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+
+
 Route::resource('time-tracks', TimeTrackController::class);
 Route::resource('users', UserController::class);
-
-
- 

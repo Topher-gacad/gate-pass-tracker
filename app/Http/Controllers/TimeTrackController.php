@@ -30,7 +30,7 @@ class TimeTrackController extends Controller
 
         TimeTrack::create($validated);
 
-        return redirect()->route('time_tracks.index')
+        return redirect()->route('time-tracks.index')
             ->with('success', 'Time track added successfully!');
     }
 
@@ -66,4 +66,7 @@ class TimeTrackController extends Controller
         return redirect()->route('time_tracks.index')
             ->with('success', 'Time track deleted successfully!');
     }
+
+
+    
 }
