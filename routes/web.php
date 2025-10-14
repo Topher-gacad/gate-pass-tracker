@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\TimeTrackController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -30,5 +29,3 @@ Route::get('/', function () {
 Route::resource('time-tracks', TimeTrackController::class);
 Route::resource('users', UserController::class);
 
-
- 
