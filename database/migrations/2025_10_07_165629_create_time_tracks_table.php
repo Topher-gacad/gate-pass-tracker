@@ -13,7 +13,7 @@ return new class extends Migration
             $table->uuid('id')->primary()->unique;
             $table->unsignedBigInteger('user_id'); 
             $table->string('reason', 255);
-            $table->string('location', 255);
+            
             $table->enum('type', ['in', 'out']); 
             $table->timestamps();
             $table->softDeletes(); 

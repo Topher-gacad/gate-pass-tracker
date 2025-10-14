@@ -24,13 +24,13 @@ class TimeTrackController extends Controller
         $validated = $request->validate([
             'user_id' => 'required|integer',
             'reason' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
+            
             'type' => 'required|string|in:in,out',
         ]);
 
         TimeTrack::create($validated);
 
-        return redirect()->route('time_tracks.index')
+        return redirect()->route('time-tracks.index')
             ->with('success', 'Time track added successfully!');
     }
 
@@ -49,7 +49,7 @@ class TimeTrackController extends Controller
         $validated = $request->validate([
             'user_id' => 'required|integer',
             'reason' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
+            
             'type' => 'required|string|in:in,out',
         ]);
 
@@ -66,4 +66,5 @@ class TimeTrackController extends Controller
         return redirect()->route('time_tracks.index')
             ->with('success', 'Time track deleted successfully!');
     }
+
 }
