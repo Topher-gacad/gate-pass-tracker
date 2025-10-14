@@ -1,5 +1,5 @@
 <!-- "TODO: Update UI elements below" -->
-<x-layout>
+<x-layouts.auth>
     <div class="max-w-2xl mx-auto mt-10 bg-white shadow-md rounded-lg p-6">
         <h1 class="text-2xl font-bold mb-4 text-center">Time Track Details</h1>
 
@@ -20,4 +20,4 @@
             </a>
         </div>
     </div>
-</x-layout>
+<x-layouts.auth>

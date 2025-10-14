@@ -1,14 +1,5 @@
 <!-- "TODO: Update UI elements below" -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Create Time Track</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-gray-100 p-1">
+<x-layouts.auth>
     <div class="max-w-2xl mx-auto mt-10">
         <h1 class="text-2xl font-bold mb-6 text-center">Create Time Track</h1>
 
@@ -51,6 +42,4 @@
 
         </form>
     </div>
-</body>
-
-</html>
+<x-layouts.auth>
