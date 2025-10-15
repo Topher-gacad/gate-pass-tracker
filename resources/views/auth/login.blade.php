@@ -18,45 +18,48 @@
 
         <form
           method="POST"
-          action="{{ route('login') }}"
+          action="{{ route('login.post') }}"
           class="w-full flex flex-col items-center"
         >
           @csrf
 
           <div class="form-control w-full relative mb-4">
             <label class="label mb-1">
-              <span class="label-text font-poppins text-[20px] text-[#003366]">Username</span>
+              <span class="label-text font-poppins text-[20px] text-[#003366]">Email</span>
             </label>
-            <div class="relative w-full">
-              <input
-                type="text"
-                name="username"
-                placeholder="Enter username"
-                class="w-full h-[53px] text-[18px] font-poppins pl-4 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded rounded-xl"
-                required
-              />
-            </div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter email"
+              class="w-full h-[53px] text-[18px] font-poppins pl-4 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded rounded-xl"
+              required
+              value="{{ old('email') }}"
+            />
           </div>
 
-          <div class="form-control w-full relative">
+          <div class="form-control w-full relative mb-4">
             <label class="label mb-1">
               <span class="label-text font-poppins text-[20px] text-[#003366]">Password</span>
             </label>
-            <div class="relative w-full">
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter password"
-                class="w-full h-[53px] text-[18px] font-poppins pl-4 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded rounded-xl"
-                required
-              />
-            </div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              class="w-full h-[53px] text-[18px] font-poppins pl-4 border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded rounded-xl"
+              required
+            />
           </div>
+
+          @if ($errors->any())
+            <div class="text-red-500 text-sm mb-4 w-full text-center">
+              {{ $errors->first() }}
+            </div>
+          @endif
 
           <div class="form-control w-full mt-6">
             <button
               type="submit"
-              class="btn w-full h-[53px] text-black text-[20px] border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded rounded-xl "
+              class="btn w-full h-[53px] text-black text-[20px] border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded rounded-xl"
               style="background-color: #FFD633;"
             >
               Log in
@@ -68,3 +71,8 @@
     </div>
   </div>
 </x-layouts.base>
+
+
+
+
+
