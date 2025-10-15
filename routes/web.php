@@ -13,7 +13,7 @@ Route::get('login', [LoginController::class, 'showLoginForm'])
 Route::post('login', [LoginController::class, 'login'])
     ->middleware('guest')
     ->name('login.post');
-
+    
 Route::post('logout', [LogoutController::class, 'logout'])
     ->name('logout')
     ->middleware('auth');
@@ -27,8 +27,5 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/login', fn() => view('auth.login'))->name('login');
 Route::resource('time-tracks', TimeTrackController::class);
-Route::resource('users', UserController::class);
-
-
- 
