@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\TimeTracks\Schemas;
 
+Use App\Enums\UserStatusEnum;
+use Filament\Forms\Components\Select;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\TextInput;
 
@@ -11,15 +13,21 @@ class TimeTrackForm
     {
         return $schema
             ->components([
-                TextInput::make('date'),
-                TextInput::make('name'),
-                TextInput::make('company'),
-                TextInput::make('department'),
-                TextInput::make('role'),
-                TextInput::make('reason'),
-                TextInput::make('type'),
-                TextInput::make('time'),
-                TextInput::make('status'),
+                TextInput::make('date')
+                    ->required()
+                    ->numeric(),
+                TextInput::make('name')
+                    ->required()
+                    ->unique(),
+                TextInput::make('company')->required(),
+                TextInput::make('department')->required(),
+                TextInput::make('role')->required(),
+                TextInput::make('reason')->required(),
+                TextInput::make('type')->required(),
+                TextInput::make('time')->required(),
+                Select::make('status')
+                    ->options(UserStatusEnum::class)
+                    ->required(),
                 
             ]);
     }
