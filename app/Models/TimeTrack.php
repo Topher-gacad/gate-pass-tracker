@@ -16,5 +16,6 @@ class TimeTrack extends Model
         'reason',
         'location',
         'type',
+        'status',
     ];
 }

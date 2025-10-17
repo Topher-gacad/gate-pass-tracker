@@ -20,4 +20,4 @@
             </a>
         </div>
     </div>
-<x-layouts.auth>
+</x-layouts.auth>

@@ -13,7 +13,7 @@ Route::get('login', [LoginController::class, 'showLoginForm'])
 Route::post('login', [LoginController::class, 'login'])
     ->middleware('guest')
     ->name('login.post');
-
+    
 Route::post('logout', [LogoutController::class, 'logout'])
     ->name('logout')
     ->middleware('auth');
